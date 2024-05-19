@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body{
+    overflow-x: hidden;
+}
+
+.nasLogo{
+    width: 5rem;
+}
+
+.loader {
+    background-color: #333;
+    width: 50px;
+    aspect-ratio: 1;
+    box-shadow: 0 0 0 3px #fff inset;
+    border-radius: 50%;
+    position: relative;
+    animation: l6 1.5s linear infinite;
+  }
+  .loader:before {
+    content: "";
+    background-color: #333;
+    position: absolute;
+    top: 100%;
+    box-shadow: inherit;
+    width: 25px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+  }
+  @keyframes l6 {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+@media (max-width: 640px){
+    .nasLogo{
+        width: 3rem;
+    }
+}
