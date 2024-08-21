@@ -76,6 +76,7 @@ export default function ProductEditList() {
       });
       console.log(res);
     } catch (error) {
+      console.log(error);
       toast.error(error?.data?.message)
     }
   }

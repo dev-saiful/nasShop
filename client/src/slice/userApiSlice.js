@@ -26,24 +26,24 @@ export const userApiSlice = apiSlice.injectEndpoints({
                 credentials:"include"
             }),
         }),
-        admin: builder.mutation({
-            query: (data) => ({
+        admin: builder.query({
+            query: () => ({
                 url: `${USERS_URL}/admin`,
-                method: 'PUT',
+                method: 'GET',
                 credentials:"include",
-                body: data,
+                // body: data,
             }),
         }),
-        customer: builder.mutation({
-            query: (data) => ({
+        customer: builder.query({
+            query: () => ({
                 url: `${USERS_URL}/customer`,
-                method: 'PUT',
+                method: 'GET',
                 credentials:"include",
-                body: data,
+                // body: data,
             }),
         }),
     }),
 })
 
 
-export const { useLoginMutation, useLogoutMutation, useRegisterMutation, useAdminMutation, useCustomerMutation } = userApiSlice
+export const { useLoginMutation, useLogoutMutation, useRegisterMutation, useAdminQuery, useCustomerQuery } = userApiSlice
