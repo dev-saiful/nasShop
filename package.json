@@ -3,11 +3,11 @@
   "version": "1.0.0",
   "main": "server.js",
   "scripts": {
-    "start": "npm run start --prefix server",
+    "start": "node server/server.js",
     "client":"npm install --prefix client",
     "server":"npm install --prefix server",
     "install":"npm run server & npm run client",
-    "build":"npm run install && npm run build --prefix client && npm run start"
+    "build":"npm run install && npm run build --prefix client"
   },
   "keywords": [],
   "author": "",
