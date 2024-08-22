@@ -1,5 +1,16 @@
 {
-  "dependencies": {
-    "bootstrap": "^5.3.3"
-  }
+  "name": "nasshop",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server/server.js",
+    "client":"npm install --prefix client",
+    "server":"npm install --prefix server",
+    "install":"npm run server & npm run client",
+    "build":"npm run install && npm run build --prefix client && npm run start"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
 }
