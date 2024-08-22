@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "server.js",
   "scripts": {
-    "start": "node server/server.js",
+    "start": "npm run start --prefix server",
     "client":"npm install --prefix client",
     "server":"npm install --prefix server",
     "install":"npm run server & npm run client",
