@@ -3,6 +3,7 @@ import { ApiError } from "../utils/apiError.js";
 import { ApiResponse } from "../utils/apiResponse.js";
 import productModel from "../models/product.model.js";
 
+
 // get all products
 const getProducts = asyncHandler(async (req, res) => {
   const pageSize = process.env.PAGINATION_LIMIT; // TODO: In Production it will be changed
@@ -12,9 +13,9 @@ const getProducts = asyncHandler(async (req, res) => {
     ? { name: { $regex: req.query.keyword, $options: "i" } }
     : {};
 
-  const count = await productModel.countDocuments({...keyword});
+  const count = await productModel.countDocuments({ ...keyword });
   const products = await productModel
-    .find({...keyword})
+    .find({ ...keyword })
     .limit(pageSize)
     .skip(pageSize * (page - 1));
   if (products === undefined || products.length == 0) {
@@ -43,10 +44,9 @@ const getProductById = asyncHandler(async (req, res) => {
 
 // get Top products
 const getTopProducts = asyncHandler(async (req, res) => {
-    const products = await productModel.find({}).sort({rating:-1}).limit(3);
-    res.status(200).json(new ApiResponse(200, products, "Top Products"));
-  });
-  
+  const products = await productModel.find({}).sort({ rating: -1 }).limit(3);
+  res.status(200).json(new ApiResponse(200, products, "Top Products"));
+});
 
 // creating product
 const createProduct = asyncHandler(async (req, res) => {
@@ -73,7 +73,6 @@ const updateProduct = asyncHandler(async (req, res) => {
   const { name, price, description, image, brand, category, countInStock } =
     req.body;
   const product = await productModel.findById(req.params.id);
-
   if (product) {
     product.name = name;
     product.price = price;
@@ -87,6 +86,8 @@ const updateProduct = asyncHandler(async (req, res) => {
     res
       .status(200)
       .json(new ApiResponse(200, updatedProduct, "Product updated"));
+    // uploading image to cloudinary
+    
   } else {
     throw new ApiError(404, "Resource not found");
   }
