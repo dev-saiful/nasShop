@@ -26,12 +26,12 @@ const generateToken = (res,user)=>{
      .cookie("accessToken",accessToken,{
         httpOnly:true,
         secure: true,
-        sameSite:"None",
+        sameSite:"lax",
     })
      .cookie("refreshToken",refreshToken,{
         httpOnly:true,
         secure: true,
-        sameSite:"None",
+        sameSite:"lax",
     });
 
     return {accessToken,refreshToken};

@@ -1,4 +1,4 @@
-export const BASE_URL = 'http://localhost:5000'
+export const BASE_URL = 'https://nasshop-server.onrender.com'
 
 export const PRODUCT_URL = '/api/v1/products'
 export const USERS_URL = '/api/v1/users'

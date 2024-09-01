@@ -10,6 +10,7 @@ export const productsApiSlice = apiSlice.injectEndpoints({
           keyword,
           pageNumber,
         },
+        credentials:"include",
       }),
       providesTags: ["Product"],
       keepUnusedDataFor: 5,
