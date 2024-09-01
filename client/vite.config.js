@@ -7,7 +7,7 @@ export default defineConfig({
   server: {
     port: 3000,
     proxy: {
-      '/uploads':'http://localhost:5000',
+      '/uploads':"http://localhost:5000",
       '/api/v1': {
         target: 'http://localhost:5000',
         changeOrigin: true,
