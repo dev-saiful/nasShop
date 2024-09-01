@@ -7,9 +7,9 @@ export default defineConfig({
   server: {
     port: 3000,
     proxy: {
-      '/uploads':"http://localhost:5000",
+      '/uploads':"https://nasshop-server.onrender.com",
       '/api/v1': {
-        target: 'http://localhost:5000',
+        target: 'https://nasshop-server.onrender.com',
         changeOrigin: true,
       },
     },
